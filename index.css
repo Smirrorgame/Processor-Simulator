@@ -9,14 +9,18 @@ h1, h2, h3, h4, h5, h6, p, label, strong {
   text-align: center;
   color: white;
 }
-input, button {
+
+input, button  {
   margin: 5px;
   width: 100px;
   box-sizing: border-box;
   font-size: 1.25em;
 }
+#options input, #options button {
+  border-radius: 5px;
+}
 input[type=file] {
-  width: 150px;
+  width: 180px;
 }
 #memory input {
   width: 185px;
@@ -25,13 +29,18 @@ input[type=file] {
   background-color: rgb(50,50,50);
   width:36%;
 }
-
 #memory {
   background-color: rgb(50,50,50);
   float: right;
-  width:62%;
+  width: 62%;
 }
-
+#documentation {
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background-color: #101010;
+  border-radius: 10px;
+}
 .mainBox {
   float: left;
   padding: 10px;
@@ -39,4 +48,5 @@ input[type=file] {
   border: solid;
   border-color: black;
   margin: 5px;
+  border-radius: 10px;
 }
