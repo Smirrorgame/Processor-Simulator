@@ -16,8 +16,23 @@ input, button  {
   box-sizing: border-box;
   font-size: 1.25em;
 }
+
+#options input[type=file]:hover {
+    opacity: 0.65;
+    filter: alpha(opacity=0.65);
+}
+
+#options input:focus, #options button:focus {
+  outline: none;
+}
+
+#options input:hover, #options button:hover {
+  background-color: #adadad;
+  border-color: #8e8e8e;
+}
 #options input, #options button {
   border-radius: 5px;
+  border-color: white;
 }
 input[type=file] {
   width: 180px;
