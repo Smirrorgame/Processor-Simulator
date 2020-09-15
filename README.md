@@ -6,6 +6,11 @@ This Simulator simulates a Processor with registers and memory.
 The registers are 16 in total, with each a length of 8 bits.
 The memory consists of 256 registers, each with a length of 16 bits.
 
+### Coming Features
+- [ ] Reference branches which are declared after the reference
+- [ ] more assembly instructions
+- [ ] more feature ideas
+
 ## How To
 
 ### Upload Assembly Code
@@ -51,3 +56,4 @@ jump END
 |BRANCHNAME:| creates a new branch at posistion where it was declared. Must be in capital and with colon |
 | jump imm/BRANCHNAME| jump to imm/BRANCHNAME |
 | jne rs1 rs2 imm/BRANCHNAME| jump to imm/BRANCHNAME if rs1 not equal to rs2 |
+| # comment | a comment in the code |
