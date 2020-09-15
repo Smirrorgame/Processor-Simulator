@@ -6,6 +6,8 @@ This Simulator simulates a Processor with registers and memory.
 The registers are 16 in total, with each a length of 8 bits.
 The memory consists of 256 registers, each with a length of 16 bits.
 
+### [Try it now on Github Pages](https://smirrorgame.github.io/Processor-Simulator/)
+
 ### Coming Features
 - [ ] Reference branches which are declared after the reference
 - [ ] more assembly instructions
