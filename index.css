@@ -1,0 +1,42 @@
+body {
+  background-color: rgb(40,40,40);
+}
+#options {
+  text-align: center;
+  float: top;
+}
+h1, h2, h3, h4, h5, h6, p, label, strong {
+  text-align: center;
+  color: white;
+}
+input, button {
+  margin: 5px;
+  width: 100px;
+  box-sizing: border-box;
+  font-size: 1.25em;
+}
+input[type=file] {
+  width: 150px;
+}
+#memory input {
+  width: 185px;
+}
+#registers {
+  background-color: rgb(50,50,50);
+  width:36%;
+}
+
+#memory {
+  background-color: rgb(50,50,50);
+  float: right;
+  width:62%;
+}
+
+.mainBox {
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+  border: solid;
+  border-color: black;
+  margin: 5px;
+}

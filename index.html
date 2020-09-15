@@ -1,0 +1,352 @@
+<html>
+<head>
+  <script src="constants.js"></script>
+  <script src="ops.js"></script>
+  <script src="index.js"></script>
+  <script src="Compiler.js"></script>
+  <script src="astgen.js"></script>
+  <link rel="stylesheet" href="index.css">
+  <meta charset="utf-8">
+</head>
+<body>
+    <h1>Simulation</h1>
+    <div id="options">
+      <!-- <input id="parse" type="file"> -->
+      <label>Compile Assembler:</label>
+      <input id="compileFile" type="file">
+      <input type="number" value=1 min=1 id="stepNum">
+      <button onclick="stepButton()">Step</button>
+      <button onclick="reset()" style="width:125px;">Reset</button>
+      <h3 id="operation">NOP</h3>
+    </div>
+    <div>
+      <div class="mainBox" id="registers">
+        <h2>Register</h2>
+        <form>
+          <label>Register 0</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 1</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 2</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 3</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 4</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 5</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 6</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 7</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 8</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 9</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 10</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 11</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 12</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 13</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 14</label>
+          <input type="text">
+          <strong>Decimal</strong>
+          <br>
+          <label>Register 15</label>
+          <input type="text">
+          <strong>Decimal</strong>
+        </form>
+      </div>
+      <div class="mainBox" id="memory">
+        <h2>Memory</h2>
+        <input type="text" style="background-color: green;">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+      </div>
+    </div>
+</body>
+</html>
