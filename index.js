@@ -1,9 +1,19 @@
+/* 
+ * @author: Micha Halla
+ 
+ * Main script, handles steps, reset, file upload, decode
+ * and execution of machine code instructions.
+ * Handles all visual things
+ */
+
+
 let registers = [];
 let memory = [];
 let instructionRegister;
 let dataRegister = "00000000";
 let pc = 0;
-window.onload = function onPageLoaded(){
+window.onload = function onPageLoaded() {
+  initRegisters();
   reset();
   readFileListener();
 }
@@ -11,6 +21,34 @@ window.onload = function onPageLoaded(){
 function showInstruction(i){
   let msg = `${i.type.toUpperCase()} ${i.args.join(" ")}\n`;
   document.getElementById("operation").innerText=msg+i.msg;
+}
+
+function initRegisters() {
+  // the 15 registers
+  let regDiv = document.getElementById("registerForm");
+  for (let i = 0; i < 16; i++) {
+    let regLabel = document.createElement("label");
+    let reg = document.createElement("input");
+    let regVal = document.createElement("strong");
+
+    regLabel.innerHTML = `Register ${i}`;
+    reg.value = "00000000";
+    reg.type = "text";
+    regVal.innerHTML = "0";
+    regDiv.append(regLabel, reg, regVal,document.createElement("br"));
+  }
+
+  // the 256 mem registers
+  let mem = document.getElementById("memory");
+  for (let i = 0; i < 255; i++) {
+    let memReg = document.createElement("input");
+
+    memReg.value = "0000000000000000";
+    memReg.type = "text";
+    mem.appendChild(memReg);
+  }
+
+  return true;
 }
 
 function reset() {

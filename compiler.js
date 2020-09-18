@@ -1,3 +1,9 @@
+/* 
+ * @author: Micha Halla
+ * 
+ * compiles given AST into machine code strings
+ */
+
 "use-strict";
 
 class Compiler {

@@ -1,3 +1,12 @@
+/* 
+ * @author: Micha Halla
+ 
+ * AST-generation script
+ * Parses Assmebly code and generates AST from
+ * the given information
+ */
+
+
 "use-strict";
 
 class AstGen {
@@ -20,7 +29,7 @@ class AstGen {
       // catch branch definitions
       if(str.match("^(([A-Z]+)(:){1})$")){
         //register detected branch
-        this.branches[str.substring(0, str.length-1)] = (i-Object.keys(this.branches).length-this.spaces);
+        this.branches[str.substring(0, str.length - 1)] = (i - Object.keys(this.branches).length - this.spaces);
         continue;
       }
       // add line to ast
@@ -60,7 +69,7 @@ class AstGen {
         "next": next
       };
       // expression is a branch name
-    }else if(this.branches[expr]!=undefined){
+    } else if (this.branches[expr] != undefined) {
       let op = Constants.Keywords[firstExp];
       let value = decToBin(this.branches[expr], op.args[op.args.length-depth]);
       return {
