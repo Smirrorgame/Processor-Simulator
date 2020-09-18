@@ -1,3 +1,11 @@
+/* 
+ * @author: Micha Halla
+ 
+ * Contains the specific functions for
+ * all known assembly instructions
+ */
+
+
 function load(rd, imm) {
   registers[rd].value = readMem(imm).substring(8,16);
 }

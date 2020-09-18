@@ -1,3 +1,11 @@
+/* 
+ * @author: Micha Halla
+ 
+ * Contains known assembly keywords
+ * and register names
+ */
+
+
 class Constants {
 
   static Keywords = {

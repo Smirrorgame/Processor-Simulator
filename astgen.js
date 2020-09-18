@@ -1,3 +1,12 @@
+/* 
+ * @author: Micha Halla
+ 
+ * AST-generation script
+ * Parses Assmebly code and generates AST from
+ * the given information
+ */
+
+
 "use-strict";
 
 class AstGen {

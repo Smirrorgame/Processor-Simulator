@@ -1,3 +1,12 @@
+/* 
+ * @author: Micha Halla
+ 
+ * Main script, handles steps, reset, file upload, decode
+ * and execution of machine code instructions.
+ * Handles all visual things
+ */
+
+
 let registers = [];
 let memory = [];
 let instructionRegister;
